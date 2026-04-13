@@ -1,0 +1,96 @@
+===============================
+API SECURITY TESTING LOG
+========================
+
+Target Application: DVWA (Damn Vulnerable Web Application)
+Attacker Machine: Kali Linux
+Tool Used: Burp Suite
+
+---
+
+## [1] API Endpoint Enumeration
+
+Steps:
+
+* Intercepted traffic using Burp Suite Proxy
+* Identified API endpoints such as:
+  /dvwa/login.php
+  /dvwa/vulnerabilities/sqli/
+
+Result:
+
+* Multiple endpoints discovered for testing
+
+---
+
+## [2] Broken Object Level Authorization (BOLA)
+
+Steps:
+
+* Captured request in Burp Suite
+* Modified parameter:
+  id=1 → id=2
+
+Result:
+
+* Accessed data of another user
+* Unauthorized access confirmed
+
+Severity:
+
+* Critical
+
+---
+
+## [3] Input Manipulation Testing
+
+Steps:
+
+* Modified input fields in intercepted requests
+* Tested different payloads
+
+Example Payload:
+' OR '1'='1
+
+Result:
+
+* Application accepted manipulated inputs
+* Weak validation observed
+
+---
+
+## [4] Authentication Testing
+
+Steps:
+
+* Intercepted login request
+* Analyzed token/session handling
+
+Result:
+
+* Weak authentication mechanism observed
+
+---
+
+## [5] Rate Limiting Test
+
+Steps:
+
+* Sent repeated requests using Burp Suite Repeater
+
+Result:
+
+* No rate limiting detected
+* System vulnerable to brute force
+
+---
+
+## [6] Final Outcome
+
+* Multiple API vulnerabilities identified
+* Critical issue: BOLA
+* Weak input validation and authentication
+
+================================
+END OF LOG
+==========
